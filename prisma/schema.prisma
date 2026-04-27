@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Wish {
+  id        String   @id @default(cuid())
+  name      String
+  message   String   @db.Text
+  ownerId   String?  // Untuk menandai ucapan miliknya di browser
+  createdAt DateTime @default(now())
+}

@@ -1,26 +1,115 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-playfair: var(--font-playfair);
+  --font-sans: var(--font-inter);
+  --color-primary: #1A1A1A; /* Elegant Charcoal */
+  --color-accent: #C5A059;  /* Champagne Gold */
+  --color-secondary: #FDFBF7; /* Soft Cream */
+  --color-gold-light: #E5C78B;
+  --color-gold-dark: #A67C37;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 40 30% 98%;
+    --foreground: 20 10% 10%;
+  }
+
+  body {
+    @apply text-primary bg-secondary selection:bg-accent/30;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair tracking-tight;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .font-playfair {
+    font-family: var(--font-playfair);
+  }
+
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
+  }
+
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-md border border-white/10 shadow-2xl;
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-dark via-accent to-gold-light;
+  }
+
+  .bg-gold-gradient {
+    @apply bg-gradient-to-br from-gold-dark via-accent to-gold-light;
+  }
+}
+
+/* Custom Utilities */
+.text-gold {
+  color: #C5A059;
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar for Premium Feel */
+.custom-scrollbar-premium::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar-premium::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar-premium::-webkit-scrollbar-thumb {
+  @apply bg-accent/20 rounded-full hover:bg-accent/40;
+}
+
+/* Mobile Performance Optimizations */
+@media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .animate-pulse {
+    animation-duration: 3s; /* Slower pulse for mobile battery/CPU */
+  }
+}
+
+/* GPU Acceleration for complex sections */
+#gallery, #hero, #couple {
+  will-change: transform, opacity;
+}
+
+/* Utility for text kerning on mobile */
+.tracking-mobile-widest {
+  letter-spacing: 0.3em;
+}
+
+@media (min-width: 768px) {
+  .tracking-mobile-widest {
+    letter-spacing: 0.5em;
+  }
 }
