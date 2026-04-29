@@ -130,7 +130,7 @@ export default function Hero({ onNavigate, onShowCover }: HeroProps) {
             <img 
               src="/images/gold-logo.png" 
               alt="Decoration" 
-              className="w-full h-full object-contain brightness-110 rotate-180"
+              className="w-full h-full object-contain brightness-110"
             />
           </div>
         </div>
