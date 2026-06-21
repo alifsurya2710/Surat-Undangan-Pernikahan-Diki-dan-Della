@@ -5,6 +5,7 @@ import { motion, HTMLMotionProps } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 interface LiquidButtonProps extends HTMLMotionProps<'button'> {
+  children?: React.ReactNode;
   delay?: string;
   fillHeight?: string;
   hoverScale?: number;
