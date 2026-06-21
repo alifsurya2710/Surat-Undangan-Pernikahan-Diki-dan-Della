@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { ChevronUp, Scroll } from 'lucide-react'
+import Image from 'next/image'
 import SplitText from './animate-ui/text/SplitText'
 
 interface HeroProps {
@@ -23,10 +24,16 @@ export default function Hero({ onNavigate, onShowCover }: HeroProps) {
   return (
     <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-secondary">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-[center_top] md:bg-center transition-transform duration-1000 scale-105"
-        style={{ backgroundImage: "url('/images/hero-bg.png')" }}
-      />
+      <div className="absolute inset-0 transition-transform duration-1000 scale-105">
+        <Image
+          src="/images/hero-bg.webp"
+          alt="Hero Background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_top] md:object-center"
+        />
+      </div>
       
       {/* Overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-secondary" />
@@ -87,10 +94,12 @@ export default function Hero({ onNavigate, onShowCover }: HeroProps) {
           
           {/* Top Ornament */}
           <div className="w-16 h-16 md:w-36 md:h-36 relative">
-            <img 
-              src="/images/gold-logo.png" 
+            <Image 
+              src="/images/gold-logo.webp" 
               alt="Decoration" 
-              className="w-full h-full object-contain brightness-110"
+              fill
+              sizes="(max-width: 768px) 64px, 144px"
+              className="object-contain brightness-110"
             />
           </div>
 
@@ -127,10 +136,12 @@ export default function Hero({ onNavigate, onShowCover }: HeroProps) {
 
           {/* Bottom Ornament */}
           <div className="w-16 h-16 md:w-36 md:h-36 relative">
-            <img 
-              src="/images/gold-logo.png" 
+            <Image 
+              src="/images/gold-logo.webp" 
               alt="Decoration" 
-              className="w-full h-full object-contain brightness-110"
+              fill
+              sizes="(max-width: 768px) 64px, 144px"
+              className="object-contain brightness-110"
             />
           </div>
         </div>

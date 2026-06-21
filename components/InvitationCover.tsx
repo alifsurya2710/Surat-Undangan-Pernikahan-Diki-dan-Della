@@ -1,6 +1,7 @@
 'use client'
 
 import { MailOpen } from 'lucide-react'
+import Image from 'next/image'
 import { LiquidButton } from './animate-ui/primitives/buttons/liquid'
 import SplitText from './animate-ui/text/SplitText'
 
@@ -12,10 +13,16 @@ export default function InvitationCover({ onOpen }: InvitationCoverProps) {
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center overflow-hidden bg-primary">
       {/* Cinematic Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-[center_top] md:bg-center scale-105"
-        style={{ backgroundImage: "url('/images/hero-bg.png')" }}
-      />
+      <div className="absolute inset-0 scale-105">
+        <Image
+          src="/images/hero-bg.webp"
+          alt="Cover Background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_top] md:object-center"
+        />
+      </div>
       
       {/* Luxury Overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/40 to-primary/95" />

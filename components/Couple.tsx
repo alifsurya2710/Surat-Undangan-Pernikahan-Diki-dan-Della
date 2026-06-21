@@ -1,6 +1,7 @@
 'use client'
 
 import { Heart, Instagram } from 'lucide-react'
+import Image from 'next/image'
 import SplitText from './animate-ui/text/SplitText'
 
 export default function Couple() {
@@ -34,7 +35,14 @@ export default function Couple() {
           <div className="flex flex-col items-center text-center space-y-6 md:space-y-8 group animate-in fade-in slide-in-from-left-8 duration-1000 fill-mode-both">
             <div className="relative">
               <div className="w-56 h-72 md:w-72 md:h-96 rounded-[3rem] md:rounded-[4rem] overflow-hidden shadow-2xl relative z-10 group-hover:scale-[1.02] transition-transform duration-500">
-                <img src="/images/groom.png" alt="Diki Setiawan" className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" />
+                <Image
+                  src="/images/groom.webp"
+                  alt="Diki Setiawan"
+                  fill
+                  sizes="(max-width: 768px) 224px, 288px"
+                  priority={false}
+                  className="object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
+                />
               </div>
               {/* Decorative Frame - Scaled for mobile */}
               <div className="absolute -inset-3 border border-accent/20 rounded-[3.5rem] md:rounded-[4.5rem] -z-0 group-hover:rotate-2 transition-transform duration-500" />
@@ -60,7 +68,14 @@ export default function Couple() {
           <div className="flex flex-col items-center text-center space-y-6 md:space-y-8 group md:mt-24 animate-in fade-in slide-in-from-right-8 duration-1000 delay-300 fill-mode-both">
             <div className="relative">
               <div className="w-56 h-72 md:w-72 md:h-96 rounded-[3rem] md:rounded-[4rem] overflow-hidden shadow-2xl relative z-10 group-hover:scale-[1.02] transition-transform duration-500">
-                <img src="/images/bride.png" alt="Della Arno Venda" className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" />
+                <Image
+                  src="/images/bride.webp"
+                  alt="Della Arno Venda"
+                  fill
+                  sizes="(max-width: 768px) 224px, 288px"
+                  priority={false}
+                  className="object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
+                />
               </div>
               {/* Decorative Frame - Scaled for mobile */}
               <div className="absolute -inset-3 border border-accent/20 rounded-[3.5rem] md:rounded-[4.5rem] -z-0 group-hover:-rotate-2 transition-transform duration-500" />

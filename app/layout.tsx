@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   title: 'Pernikahan | Diki & Della',
   description: 'Undangan Pernikahan Diki & Della',
   icons: {
-    icon: '/images/gold-logo.png',
-    shortcut: '/images/gold-logo.png',
-    apple: '/images/gold-logo.png',
+    icon: '/images/gold-logo.webp',
+    shortcut: '/images/gold-logo.webp',
+    apple: '/images/gold-logo.webp',
   },
 }
 

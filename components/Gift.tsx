@@ -13,19 +13,19 @@ export default function Gift() {
       bank: 'BCA',
       number: '3790587684',
       name: 'Diki Setiawan',
-      logo: '/images/bca.png'
+      logo: '/images/bca.webp'
     },
     {
       bank: 'BRI',
       number: '034401149529503',
       name: 'Della Arno Venda',
-      logo: '/images/bri.png'
+      logo: '/images/bri.webp'
     },
     {
       bank: 'DANA',
       number: '08977893975',
       name: 'Diki Setiawan',
-      logo: '/images/dana.png'
+      logo: '/images/dana.webp'
     }
   ]
 

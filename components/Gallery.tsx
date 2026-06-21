@@ -643,12 +643,12 @@ function CircularGallery({
 }
 
 const mediaItems = [
-  { id: 1, type: 'image', url: "/images/gallery/gallery1.jpg", caption: "Momen Manis" },
-  { id: 2, type: 'image', url: "/images/gallery/gallery2.jpg", caption: "Cinta Abadi" },
-  { id: 3, type: 'image', url: "/images/gallery/gallery3.jpg", caption: "Kebahagiaan Murni" },
-  { id: 4, type: 'image', url: "/images/gallery/gallery4.jpg", caption: "Bersama Selamanya" },
-  { id: 7, type: 'image', url: "/images/gallery/gallery1.jpg", caption: "Janji Suci" },
-  { id: 8, type: 'image', url: "/images/gallery/gallery2.jpg", caption: "Tawa Bahagia" },
+  { id: 1, type: 'image', url: "/images/gallery/gallery1.webp", caption: "Momen Manis" },
+  { id: 2, type: 'image', url: "/images/gallery/gallery2.webp", caption: "Cinta Abadi" },
+  { id: 3, type: 'image', url: "/images/gallery/gallery3.webp", caption: "Kebahagiaan Murni" },
+  { id: 4, type: 'image', url: "/images/gallery/gallery4.webp", caption: "Bersama Selamanya" },
+  { id: 7, type: 'image', url: "/images/gallery/gallery1.webp", caption: "Janji Suci" },
+  { id: 8, type: 'image', url: "/images/gallery/gallery2.webp", caption: "Tawa Bahagia" },
 ]
 
 export default function Gallery() {

@@ -1,8 +1,9 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { CreditCard as CardIcon } from 'lucide-react'
+import Image from 'next/image'
 
 interface CreditCardProps {
   type?: 'gray-dark' | 'gold' | 'blue' | 'classic'
@@ -19,6 +20,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
   accountHolder = 'ACCOUNT HOLDER',
   logo
 }) => {
+  const [logoError, setLogoError] = useState(false)
   const getBackground = () => {
     switch (type) {
       case 'gray-dark':
@@ -92,15 +94,15 @@ const CreditCard: React.FC<CreditCardProps> = ({
               {accountHolder}
             </span>
           </div>
-          <div className="w-11 h-11 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center p-2 shadow-lg shrink-0 ml-3 border border-white/20">
-            {logo ? (
-                <img 
+          <div className="w-11 h-11 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center p-2 shadow-lg shrink-0 ml-3 border border-white/20 relative overflow-hidden">
+            {logo && !logoError ? (
+                <Image 
                   src={logo} 
                   alt={bankName} 
-                  className="w-full h-full object-contain" 
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = 'none';
-                  }}
+                  fill
+                  sizes="56px"
+                  className="object-contain p-2" 
+                  onError={() => setLogoError(true)}
                 />
             ) : (
                 <CardIcon className="w-5 h-5 md:w-8 md:h-8 text-black/20" />
